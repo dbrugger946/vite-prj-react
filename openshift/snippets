@@ -1,0 +1,2 @@
+oc create cm  appsettings-api  --from-file=.env=openshift/ocp.env
+oc set volume deployment/vite-react1 --add --name appsettings-vol --mount-path /app/.env --configmap-name=appsettings-api --sub-path=.env
